@@ -27,6 +27,6 @@ while continua_jogando=='s':
             fichas_field = int(input('Você não tem fichas suficientes. Tente novamente. '))
             fichas = fichas - fichas_field
             print('Suas fichas: {}'.format(fichas))
-    twelve
+    twelve = str(input('Você gostaria de fazer uma aposta em Twelve?[s/n] '))
 
 
