@@ -1,7 +1,7 @@
 from random import randint
 print('Nesse jogo quando aparecer a opção [s/n], responda "s" para sim e "n" para não')
-print('Vamos começar o jogo de Craps. Você tem 100 fichas.')
-fichas = 100
+print('Vamos começar o jogo de Craps. Você tem 42 fichas.')
+fichas = 42
 continua_jogando = 's'
 while continua_jogando =='s':
     print('Fase de Come Out')
@@ -90,6 +90,7 @@ while continua_jogando =='s':
             fichas = fichas + 2 * fichas_pass_line_bet
             print('Você venceu no Pass Line Bet, recuperou suas {} fichas e ganhou a mais a mesma quantidade.'.format(fichas_pass_line_bet))
             print('Suas fichas: {}'.format(fichas))
+
     
 
 
