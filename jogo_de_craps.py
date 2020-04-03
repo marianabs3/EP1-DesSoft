@@ -1,14 +1,13 @@
-import random
+from random import randint
 print('Nesse jogo quando aparecer a opção [s/n], responda "s" para sim e "n" para não')
-fichas = int(input('Vamos começar o jogo de Craps. Com quantas fichas você gostaria de começar?\n'))
-while fichas <= 0:
-    fichas = int(input('Vamos começar o jogo de Craps. Com quantas fichas você gostaria de começar?\n'))
+print('Vamos começar o jogo de Craps. Você tem 100 fichas.')
+fichas = 100
 continua_jogando = 's'
 while continua_jogando =='s':
     print('Fase de Come Out')
-    pass_line_bet = srt(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
+    pass_line_bet = str(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
     while pass_line_bet not in 'sn':
-        pass_line_bet = srt(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
+        pass_line_bet = str(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
         if pass_line_bet == 's':
             fichas_pass_line_bet = int(input('Quantas fichas gostaria de apostar em Pass Line Bet?\n'))
             fichas = fichas - fichas_pass_line_bet
@@ -17,9 +16,9 @@ while continua_jogando =='s':
             fichas_pass_line_bet = int(input('Você não tem fichas suficientes. Tente novamente.\n'))
             fichas = fichas - fichas_pass_line_bet
             print('Suas fichas: {}'.format(fichas))
-    field = srt(input('Você gostaria de fazer uma aposta em Field? [s/n]\n'))
+    field = str(input('Você gostaria de fazer uma aposta em Field? [s/n]\n'))
     while field not in 'sn':
-        field = srt(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
+        field = str(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
     if field == 's':
         fichas_field = int(input('Quantas fichas gostaria de apostar em Pass Line Bet?\n'))
         fichas = fichas - fichas_field
@@ -71,7 +70,7 @@ while continua_jogando =='s':
             print('Suas fichas: {}'.format(fichas))
         else:
             print('Você perdeu no Field.')
-     if any_craps == 's':
+    if any_craps == 's':
         if sd == 3 or sd == 2 or sd == 12:
             fichas = fichas + 8 * fichas_any_craps
             print('Você venceu no Any Craps, recuperou suas {} fichas e ganhou a mais sete vezes a mesma quantidade.'.format(fichas_any_craps))
@@ -86,7 +85,7 @@ while continua_jogando =='s':
             print('Suas fichas: {}'.format(fichas))
         else:
             print('Você perdeu no Twelve.')
-    if pass_lineb_bet == 's':
+    if pass_line_bet == 's':
         if sd == 7 or sd == 11:
             fichas = fichas + 2 * fichas_pass_line_bet
             print('Você venceu no Pass Line Bet, recuperou suas {} fichas e ganhou a mais a mesma quantidade.'.format(fichas_pass_line_bet))
