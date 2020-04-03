@@ -20,7 +20,7 @@ while continua_jogando=='s':
     while field not in 'sn':
         field = srt(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n] '))
         if field == 's':
-            fichas_fieldt = int(input('Quantas fichas gostaria de apostar em Pass Line Bet? '))
+            fichas_field = int(input('Quantas fichas gostaria de apostar em Pass Line Bet? '))
             fichas = fichas - fichas_field
         while fichas < 0:
             fichas = fichas + fichas_field
@@ -28,5 +28,13 @@ while continua_jogando=='s':
             fichas = fichas - fichas_field
             print('Suas fichas: {}'.format(fichas))
     twelve = str(input('Você gostaria de fazer uma aposta em Twelve?[s/n] '))
+    while twelve not in 'ns':
+        twelve = str(input('Você gostaria de fazer uma aposta em Twelve?[s/n] '))
+    if twelve == 's':
+        fichas_twelve = int(input('Quantas fichas você quer apostar em Twelve? '))
+        fichas = fichas - fichas_twelve
+        
+    
+
 
 
