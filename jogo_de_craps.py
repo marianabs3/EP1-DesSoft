@@ -8,14 +8,14 @@ while continua_jogando =='s':
     pass_line_bet = str(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
     while pass_line_bet not in 'sn':
         pass_line_bet = str(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
-        if pass_line_bet == 's':
-            fichas_pass_line_bet = int(input('Quantas fichas gostaria de apostar em Pass Line Bet?\n'))
-            fichas = fichas - fichas_pass_line_bet
-        while fichas < 0:
-            fichas = fichas + fichas_pass_line_bet
-            fichas_pass_line_bet = int(input('Você não tem fichas suficientes. Tente novamente.\n'))
-            fichas = fichas - fichas_pass_line_bet
-            print('Suas fichas: {}'.format(fichas))
+    if pass_line_bet == 's':
+        fichas_pass_line_bet = int(input('Quantas fichas gostaria de apostar em Pass Line Bet?\n'))
+        fichas = fichas - fichas_pass_line_bet
+    while fichas < 0:
+        fichas = fichas + fichas_pass_line_bet
+        fichas_pass_line_bet = int(input('Você não tem fichas suficientes. Tente novamente.\n'))
+        fichas = fichas - fichas_pass_line_bet
+        print('Suas fichas: {}'.format(fichas))
     field = str(input('Você gostaria de fazer uma aposta em Field? [s/n]\n'))
     while field not in 'sn':
         field = str(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
