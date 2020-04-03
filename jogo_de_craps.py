@@ -129,3 +129,59 @@ while continua_jogando =='s':
                     fichas_twelve = int(input('Você não tem fichas suficiente, tente novamente.\n'))
                     fichas = fichas - fichas_twelve
                     print('Suas fichas: {}'.format(fichas))
+
+                d1 = randint(1, 6)
+                d2 = randint(1, 6)
+                sd = d1 + d2
+                print('Rolagem de dados:\nPrimeiro dado - {}\nSegundo dado - {}\nSoma - {}'.format(d1, d2, sd))
+
+                if field == 's':
+                    if sd == 3 or sd == 4 or sd == 9 or sd == 10 or sd == 11:
+                        fichas = fichas + 2 * fichas_field
+                        print('Você venceu no Field, recuperou suas {} fichas e ganhou a mais a mesma quantidade.'.format(fichas_field))
+                        print('Suas fichas: {}'.format(fichas))
+                    elif sd == 2:
+                        fichas = fichas + 3 * fichas_field
+                        print('Você venceu no Field, recuperou suas {} fichas e ganhou a mais o dobro dessa quantidade.'.format(fichas_field))
+                        print('Suas fichas: {}'.format(fichas))
+                    elif sd == 12:
+                        fichas = fichas + 4 * fichas_field
+                        print('Você venceu no Field, recuperou suas {} fichas e ganhou a mais o triplo dessa quantidade.'.format(fichas_field))
+                        print('Suas fichas: {}'.format(fichas))
+                    else:
+                        print('Você perdeu no Field.')
+
+                if any_craps == 's':
+                    if sd == 3 or sd == 2 or sd == 12:
+                        fichas = fichas + 8 * fichas_any_craps
+                        print('Você venceu no Any Craps, recuperou suas {} fichas e ganhou a mais sete vezes a mesma quantidade.'.format(fichas_any_craps))
+                        print('Suas fichas: {}'.format(fichas))
+                    else:
+                        print('Você perdeu no Any Craps.')
+
+                if twelve == 's':
+                    if sd == 12:
+                        fichas = fichas + 31 * fichas_twelve
+                        print('Você venceu no Twelve, recuperou suas {} fichas e ganhou a mais trinta vezes a mesma quantidade.'.format(ft))
+                        print('Suas fichas: {}'.format(fichas))
+                    else:
+                        print('Você perdeu no Twelve.')
+
+                if sd == 7:
+                    p = 7
+
+            if sd == 7:
+                print('Você perdeu no Pass Line Bet.')
+            else:
+                fichas = fichas + 2 * fichas_pass_line_bet
+                print('Você venceu no Pass Line Bet, recuperou suas {} fichas e ganhou a mais a mesma quantidade.'.format(fichas_pass_line_bet))
+                print('Suas fichas: {}'.format(fichas))
+        else:
+            print('Você perdeu no Pass Line Bet.')
+            print('Suas fichas: {}'.format(fichas))
+    continua_jogando = str(input('Você quer continuar a jogar? [s/n]\n'))
+    if fichas == 0:
+        print('Infelizmente você não tem mais fichas, por isso estamos encerrando o jogo.')
+        continua_jogando = 'n'
+
+print('Obrigado por jogar, seu total de fichas ao final é: {}'.format(fichas))
