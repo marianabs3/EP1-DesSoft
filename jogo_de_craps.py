@@ -18,9 +18,9 @@ while continua_jogando =='s':
         print('Suas fichas: {}'.format(fichas))
     field = str(input('Você gostaria de fazer uma aposta em Field? [s/n]\n'))
     while field not in 'sn':
-        field = str(input('Você gostaria de fazer uma aposta Pass Line Bet? [s/n]\n'))
+        field = str(input('Você gostaria de fazer uma aposta Field? [s/n]\n'))
     if field == 's':
-        fichas_field = int(input('Quantas fichas gostaria de apostar em Pass Line Bet?\n'))
+        fichas_field = int(input('Quantas fichas gostaria de apostar em Field?\n'))
         fichas = fichas - fichas_field
     while fichas < 0:
         fichas = fichas + fichas_field
@@ -90,8 +90,42 @@ while continua_jogando =='s':
             fichas = fichas + 2 * fichas_pass_line_bet
             print('Você venceu no Pass Line Bet, recuperou suas {} fichas e ganhou a mais a mesma quantidade.'.format(fichas_pass_line_bet))
             print('Suas fichas: {}'.format(fichas))
-
-    
-
-
-
+        elif sd != 2 and sd != 3 and sd != 12:
+            p = sd
+            sd = 0
+            while sd != p:
+                print('Fase de Point.\nVocê não venceu e nem perdeu ainda no Pass Line Bet, seu valor de Point é {}.'.format(p))
+                print('Suas fichas: {}'.format(fichas))
+                field = str(input('Você gostaria de fazer uma aposta Field? [s/n]\n'))
+                while field not in 'ns':
+                    field = str(input('Você gostaria de fazer uma aposta Field? [s/n]\n'))
+                if field == 's':
+                    fichas_field = int(input('Quantas fichas você quer apostar em Field?\n'))
+                    fichas = fichas - fichas_field
+                while fichas < 0:
+                    fichas = fichas + fichas_field
+                    fichas_field = int(input('Você não tem fichas suficiente, tente novamente.\n'))
+                    fichas = fichas - fichas_field
+                    print('Suas fichas: {}'.format(fichas))
+                any_craps = str(input('Você gostaria de fazer uma aposta Any Craps? [s/n]\n'))
+                while any_craps not in 'ns':
+                    any_craps = str(input('Você gostaria de fazer uma aposta Any Craps? [s/n]\n'))
+                if any_craps == 's':
+                    fichas_any_craps = int(input('Quantas fichas você quer apostar em Any Craps?\n'))
+                    fichas = fichas - fichas_any_craps
+                while fichas < 0:
+                    fichas = fichas + fichas_any_craps
+                    fichas_any_craps = int(input('Você não tem fichas suficiente, tente novamente.\n'))
+                    fichas = fichas - fichas_any_craps
+                    print('Suas fichas: {}'.format(fichas))
+                twelve = str(input('Você gostaria de fazer uma aposta Twelve? [s/n]\n'))
+                while twelve not in 'ns':
+                    twelve = str(input('Você gostaria de fazer uma aposta Twelve? [s/n]\n'))
+                if twelve == 's':
+                    fichas_twelve = int(input('Quantas fichas você quer apostar em Twelve?\n'))
+                    fichas = fichas - fichas_twelve
+                while fichas < 0:
+                    fichas = fichas + fichas_twelve
+                    fichas_twelve = int(input('Você não tem fichas suficiente, tente novamente.\n'))
+                    fichas = fichas - fichas_twelve
+                    print('Suas fichas: {}'.format(fichas))
