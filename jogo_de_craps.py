@@ -162,7 +162,7 @@ while continua_jogando =='s':
                 if twelve == 's':
                     if sd == 12:
                         fichas = fichas + 31 * fichas_twelve
-                        print('Você venceu no Twelve, recuperou suas {} fichas e ganhou a mais trinta vezes a mesma quantidade.'.format(ft))
+                        print('Você venceu no Twelve, recuperou suas {} fichas e ganhou a mais trinta vezes a mesma quantidade.'.format(fichas_twelve))
                         print('Suas fichas: {}'.format(fichas))
                     else:
                         print('Você perdeu no Twelve.')
